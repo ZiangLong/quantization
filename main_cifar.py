@@ -14,7 +14,7 @@ from nets.resnet_type_cifar import QtUniRes
 from nets.quant_uni_type import QuantReLU, bit_alpha
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
-parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
+parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
                     help='evaluate model on validation set')
@@ -63,11 +63,11 @@ parser.add_argument('--rho', default=0.0, type=float, metavar='R',
                     help='blended parameter')
 
 def main(args):
-    factor = 20
-    args.n_epochs *= factor
-    args.batch_size *= factor
-    args.ms1 *= factor
-    args.ms2 *= factor
+    #factor = 20
+    #args.n_epochs *= factor
+    #args.batch_size *= factor
+    #args.ms1 *= factor
+    #args.ms2 *= factor
     # Prepare Data
     print('==> Preparing data..')
     transform_train = transforms.Compose([
